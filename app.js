@@ -5,9 +5,9 @@ const morgan = require("morgan");
 const app = express();
 const cors = require('cors');
 // const clientusers = require("./routes/clientusers");
-const artistusers = require("./routes/artistusers");
-const matches = require("./routes/matches");
-const chat = require("./routes/chat");
+// const artistusers = require("./routes/artistusers");
+// const matches = require("./routes/matches");
+// const chat = require("./routes/chat");
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
@@ -22,9 +22,9 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors())
 // app.use("/clientusers", clientusers);
-app.use("/artistusers", artistusers);
-app.use("/matches", matches);
-app.use("/chat", chat);
+// app.use("/artistusers", artistusers);
+// app.use("/matches", matches);
+// app.use("/chat", chat);
 
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
