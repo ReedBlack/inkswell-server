@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const queries = require('../queries/queries_artistusers');
+const queries = require('../queries/queries_artistUsers');
 
 router.get("/", (request, response, next) => {
     queries.list().then(artists => {
