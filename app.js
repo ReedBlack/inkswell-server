@@ -11,9 +11,9 @@ const cors = require('cors');
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
-const queries_artistusers = require("./queries/queries_artistusers");
+const queries_artistusers = require("./queries/queries_artistUsers");
 const queries_chat = require("./queries/queries_chat");
-const queries_clientusers = require("./queries/queries_clientusers");
+const queries_clientusers = require("./queries/queries_clientUsers");
 const queries_matches = require("./queries/queries_matches");
 
 app.use(morgan('dev'));
