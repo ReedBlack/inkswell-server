@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const queries = require('../queries/queries_clientUsers');
+const queries = require('../queries/queries_clientusers');
 
 router.get("/", (request, response, next) => {
     queries.list().then(clients => {
@@ -12,11 +12,11 @@ router.get("/", (request, response, next) => {
 });
 
 router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(clientUsers => {
-        clientUsers
+    queries.read(request.params.id).then(clientusers => {
+        clientusers
             ?
             response.json({
-                clientUsers
+                clientusers
             }) :
             response.status(404).json({
                 message: 'Not found'
@@ -25,9 +25,9 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.post("/", (request, response, next) => {
-    queries.create(request.body).then(clientUsers => {
+    queries.create(request.body).then(clientusers => {
         response.status(201).json({
-            clientUsers: clientUsers
+            clientusers: clientusers
         });
     }).catch(next);
 });
@@ -41,9 +41,9 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(clientUsers => {
+    queries.update(request.params.id, request.body).then(clientusers => {
         response.json({
-            clientUsers: clientUsers[0]
+            clientusers: clientusers[0]
         });
     }).catch(next);
 });

@@ -4,22 +4,27 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
 const cors = require('cors');
-const clientUsers = require("./routes/clientUsers");
-const clientUsers = require("./routes/artistUsers");
+const clientusers = require("./routes/clientusers");
+const artistusers = require("./routes/artistusers");
 const matches = require("./routes/matches");
+const chat = require("./routes/chat");
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
-const queries = require("./queries");
-const favqueries = require("./queries_matches");
+const queries_artistusers = require("./queries/queries_artistusers");
+const queries_chat = require("./queries/queries_chat");
+const queries_clientusers = require("./queries/queries_clientusers");
+const queries_matches = require("./queries/queries_matches");
 
 app.use(morgan('dev'));
 
 
 app.use(bodyParser.json());
 app.use(cors())
-app.use("/clientUsers", clientUsers);
+app.use("/clientusers", clientusers);
+app.use("/artistusers", artistusers);
 app.use("/matches", matches);
+app.use("/chat", chat);
 
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
@@ -54,20 +59,20 @@ app.post("/upload",
         });
     });
 
-app.get("/clientUsers", (request, response, next) => {
-    queries
+app.get("/clientusers", (request, response, next) => {
+    queries_clientusers
         .list()
-        .then(clientUsers => {
+        .then(clientusers => {
             response.json({
-                clientUsers
+                clientusers
             });
         })
         .catch(next);
 });
 
-app.post("/clientUsers", (request, response, next) => {
+app.post("/clientusers", (request, response, next) => {
     console.log("body is   ", request.body);
-    queries
+    queries_clientusers
         .create(request.body)
         .then(match => {
             response.status(201).json({
@@ -77,20 +82,20 @@ app.post("/clientUsers", (request, response, next) => {
         .catch(next);
 });
 
-app.get("/artistUsers", (request, response, next) => {
-    queries
+app.get("/artistusers", (request, response, next) => {
+    queries_artistusers
         .list()
-        .then(artistUsers => {
+        .then(artistusers => {
             response.json({
-                artistUsers
+                artistusers
             });
         })
         .catch(next);
 });
 
-app.post("/artistUsers", (request, response, next) => {
+app.post("/artistusers", (request, response, next) => {
     console.log("body is   ", request.body);
-    queries
+    queries_artistusers
         .create(request.body)
         .then(match => {
             response.status(201).json({
@@ -111,7 +116,7 @@ app.get("/matches", (request, response) => {
 });
 
 app.post("/matches", (request, response, next) => {
-    favqueries
+    queries_matches
         .create(request.body)
         .then(match => {
             response.status(201).json({

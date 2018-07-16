@@ -17,6 +17,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE mixtable_id_seq RESTART WITH 3;")
+      return knex.raw("ALTER SEQUENCE chat_id_seq RESTART WITH 3;")
     })
 };

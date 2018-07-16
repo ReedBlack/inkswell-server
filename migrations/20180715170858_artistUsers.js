@@ -1,6 +1,7 @@
 exports.up = function (knex, Promise) {
-    return knex.schema.createTable("artistUsers", table => {
+    return knex.schema.createTable("artistusers", table => {
         table.increments('id')
+        table.text('name')
         table.text('email')
         table.text('password')
         table.text('image_link')
@@ -12,5 +13,5 @@ exports.up = function (knex, Promise) {
 };
 
 exports.down = function (knex, Promise) {
-    return knex.schema.dropTableIfExists('artistUsers')
+    return knex.schema.dropTableIfExists('artistusers')
 };

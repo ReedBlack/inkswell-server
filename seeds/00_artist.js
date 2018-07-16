@@ -1,9 +1,9 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('artistUsers').del()
+  return knex('artistusers').del()
     .then(function () {
       // Inserts seed entries
-      return knex('artistUsers').insert([{
+      return knex('artistusers').insert([{
           id: 1,
           name: "Eliane Lorey",
           email: "Elaine@gmail.com",
@@ -39,6 +39,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE mixtable_id_seq RESTART WITH 4;")
+      return knex.raw("ALTER SEQUENCE artistusers_id_seq RESTART WITH 4;")
     })
 };

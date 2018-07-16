@@ -1,22 +1,24 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('chat').del()
+  return knex('matches').del()
     .then(function () {
       // Inserts seed entries
-      return knex('chat').insert([{
+      return knex('matches').insert([{
           id: 1,
+          client_id: 2,
           artist_id: 3,
-          user_id: 2,
+          chat_id: 1
         },
         {
           id: 2,
-          user_id: 5,
+          client_id: 5,
           artist_id: 1,
+          chat_id: 2
         },
 
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE mixtable_id_seq RESTART WITH 3;")
+      return knex.raw("ALTER SEQUENCE matches_id_seq RESTART WITH 3;")
     })
 };

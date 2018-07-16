@@ -1,14 +1,14 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('clientUsers').del()
+  return knex('clientusers').del()
     .then(function () {
       // Inserts seed entries
-      return knex('clientUsers').insert([{
+      return knex('clientusers').insert([{
           id: 1,
           name: "Reed",
           email: "black.reed.c@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Reed.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Reed.png",
           budget: "$400",
           placement: "Tramp Stamp",
           size: "Grapefruit",
@@ -19,7 +19,7 @@ exports.seed = function (knex, Promise) {
           name: "Dillon",
           email: "dillon@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Dillon.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Dillon.png",
           budget: "$200",
           placement: "chest",
           size: "bong-sized",
@@ -30,7 +30,7 @@ exports.seed = function (knex, Promise) {
           name: "Dan",
           email: "dan@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Dan.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Dan.png",
           budget: "Dev Money",
           placement: "back",
           size: "whole back",
@@ -41,7 +41,7 @@ exports.seed = function (knex, Promise) {
           name: "Brandon",
           email: "brandon@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Brandon.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Brandon.png",
           budget: "$20,000",
           placement: "right arm",
           size: "full sleeve",
@@ -52,7 +52,7 @@ exports.seed = function (knex, Promise) {
           name: "Nick",
           email: "nick@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Nick.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Nick.png",
           budget: "$500",
           placement: "belly",
           size: "medium",
@@ -63,7 +63,7 @@ exports.seed = function (knex, Promise) {
           name: "Patrick",
           email: "patrick@gmail.com",
           password: "123456",
-          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Patrick.png",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/clientusers/Patrick.png",
           budget: "new dev money",
           placement: "chest/backstrap",
           size: "medium-large",
@@ -73,6 +73,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE mixtable_id_seq RESTART WITH 7;")
+      return knex.raw("ALTER SEQUENCE clientusers_id_seq RESTART WITH 7;")
     })
 };

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const queries = require('../queries/queries_artistUsers');
+const queries = require('../queries/queries_artistusers');
 
 router.get("/", (request, response, next) => {
     queries.list().then(artists => {
@@ -12,11 +12,11 @@ router.get("/", (request, response, next) => {
 });
 
 router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(artistUsers => {
-        artistUsers
+    queries.read(request.params.id).then(artistusers => {
+        artistusers
             ?
             response.json({
-                artistUsers
+                artistusers
             }) :
             response.status(404).json({
                 message: 'Not found'
@@ -25,9 +25,9 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.post("/", (request, response, next) => {
-    queries.create(request.body).then(artistUsers => {
+    queries.create(request.body).then(artistusers => {
         response.status(201).json({
-            artistUsers: artistUsers
+            artistusers: artistusers
         });
     }).catch(next);
 });
@@ -41,9 +41,9 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(artistUsers => {
+    queries.update(request.params.id, request.body).then(artistusers => {
         response.json({
-            artistUsers: artistUsers[0]
+            artistusers: artistusers[0]
         });
     }).catch(next);
 });
