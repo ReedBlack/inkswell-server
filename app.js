@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
 const cors = require('cors');
-const clientusers = require("./routes/clientusers");
+// const clientusers = require("./routes/clientusers");
 const artistusers = require("./routes/artistusers");
 const matches = require("./routes/matches");
 const chat = require("./routes/chat");
@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 
 app.use(bodyParser.json());
 app.use(cors())
-app.use("/clientusers", clientusers);
+// app.use("/clientusers", clientusers);
 app.use("/artistusers", artistusers);
 app.use("/matches", matches);
 app.use("/chat", chat);
