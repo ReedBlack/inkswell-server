@@ -10,7 +10,7 @@ exports.up = function (knex, Promise) {
         table.integer('artist_id')
             .notNullable()
             .references('id')
-            .inTable('clientusers')
+            .inTable('artistusers')
             .onDelete('CASCADE')
             .index()
         table.integer('chat_id')
