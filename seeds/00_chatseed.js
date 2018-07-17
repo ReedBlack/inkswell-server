@@ -5,12 +5,12 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('chat').insert([{
           id: 1,
-          chat_client: 3,
+          chat_client: 1,
           chat_artist: 2,
         },
         {
           id: 2,
-          chat_client: 5,
+          chat_client: 1,
           chat_artist: 1,
         },
 
