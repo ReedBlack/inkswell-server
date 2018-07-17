@@ -3,12 +3,30 @@ const router = express.Router();
 
 const queries = require('../queries/queries_artistUsers');
 
+const {
+    camelizeKeys,
+    decamelizeKeys
+} = require('humps');
+
 router.get("/", (request, response, next) => {
     queries.list().then(artists => {
         response.json({
             artists
         });
     }).catch(next);
+});
+
+router.get('/:id/matches', (req, res, next) => {
+    knex('matches')
+        .innerJoin('artistusers', 'artistusers.id', 'matches.artist_id')
+        .where('matches.artist_id', req.params.id)
+        .then((rows) => {
+            const artist_matches = camelizeKeys(rows);
+            res.send(artist_matches);
+        })
+        .catch((err) => {
+            next(err);
+        });
 });
 
 router.get("/:id", (request, response, next) => {
