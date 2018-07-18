@@ -59,51 +59,51 @@ app.post("/upload",
         });
     });
 
-app.get("/clientusers", (request, response, next) => {
-    queries_clientusers
-        .list()
-        .then(clientusers => {
-            response.json({
-                clientusers
-            });
-        })
-        .catch(next);
-});
+// app.get("/clientusers", (request, response, next) => {
+//     queries_clientusers
+//         .list()
+//         .then(clientusers => {
+//             response.json({
+//                 clientusers
+//             });
+//         })
+//         .catch(next);
+// });
 
-app.post("/clientusers", (request, response, next) => {
-    console.log("body is   ", request.body);
-    queries_clientusers
-        .create(request.body)
-        .then(match => {
-            response.status(201).json({
-                match
-            });
-        })
-        .catch(next);
-});
+// app.post("/clientusers", (request, response, next) => {
+//     console.log("body is   ", request.body);
+//     queries_clientusers
+//         .create(request.body)
+//         .then(match => {
+//             response.status(201).json({
+//                 match
+//             });
+//         })
+//         .catch(next);
+// });
 
-app.get("/artistusers", (request, response, next) => {
-    queries_artistusers
-        .list()
-        .then(artistusers => {
-            response.json({
-                artistusers
-            });
-        })
-        .catch(next);
-});
+// app.get("/artistusers", (request, response, next) => {
+//     queries_artistusers
+//         .list()
+//         .then(artistusers => {
+//             response.json({
+//                 artistusers
+//             });
+//         })
+//         .catch(next);
+// });
 
-app.post("/artistusers", (request, response, next) => {
-    console.log("body is   ", request.body);
-    queries_artistusers
-        .create(request.body)
-        .then(match => {
-            response.status(201).json({
-                match
-            });
-        })
-        .catch(next);
-});
+// app.post("/artistusers", (request, response, next) => {
+//     console.log("body is   ", request.body);
+//     queries_artistusers
+//         .create(request.body)
+//         .then(match => {
+//             response.status(201).json({
+//                 match
+//             });
+//         })
+//         .catch(next);
+// });
 
 // app.get("/matches", (request, response) => {
 //     database("matches")
@@ -115,16 +115,16 @@ app.post("/artistusers", (request, response, next) => {
 //         });
 // });
 
-app.post("/matches", (request, response, next) => {
-    queries_matches
-        .create(request.body)
-        .then(match => {
-            response.status(201).json({
-                match
-            });
-        })
-        .catch(next);
-});
+// app.post("/matches", (request, response, next) => {
+//     queries_matches
+//         .create(request.body)
+//         .then(match => {
+//             response.status(201).json({
+//                 match
+//             });
+//         })
+//         .catch(next);
+// });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
