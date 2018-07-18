@@ -105,15 +105,15 @@ app.post("/artistusers", (request, response, next) => {
         .catch(next);
 });
 
-app.get("/matches", (request, response) => {
-    database("matches")
-        .select()
-        .then(matches => {
-            response.send({
-                matches
-            });
-        });
-});
+// app.get("/matches", (request, response) => {
+//     database("matches")
+//         .select()
+//         .then(matches => {
+//             response.send({
+//                 matches
+//             });
+//         });
+// });
 
 app.post("/matches", (request, response, next) => {
     queries_matches
