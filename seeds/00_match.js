@@ -5,7 +5,7 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('matches').insert([{
           id: 1,
-          client_id: 2,
+          client_id: 5,
           artist_id: 3,
           chat_id: 1
         },
