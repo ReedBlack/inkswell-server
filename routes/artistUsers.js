@@ -17,7 +17,7 @@ router.get("/", (request, response, next) => {
 });
 
 router.get('/:id/matches', (req, res, next) => {
-    knex('matches')
+    queries.read('matches')
         .innerJoin('artistusers', 'artistusers.id', 'matches.artist_id')
         .where('matches.artist_id', req.params.id)
         .then((rows) => {
