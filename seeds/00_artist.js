@@ -35,6 +35,28 @@ exports.seed = function (knex, Promise) {
           pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Skyler2.png",
           pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Skyler3.png",
           shop: "Certified Tattoo Studios"
+        },
+        {
+          id: 4,
+          name: "Rebecca Ashley aka Black Huntress",
+          email: "Rebecca@gmail.com",
+          password: "654321",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/rebecca.png",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/rebecca1.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/rebecca2.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/rebecca3.png",
+          shop: "Auspicious Tattoo"
+        },
+        {
+          id: 5,
+          name: "Fish",
+          email: "Fish@gmail.com",
+          password: "654321",
+          image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish.png",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish1.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish2.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish3.png",
+          shop: "Th'ink Tank"
         }
       ])
     })
