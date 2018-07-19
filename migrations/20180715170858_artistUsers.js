@@ -1,10 +1,10 @@
 exports.up = function (knex, Promise) {
     return knex.schema.createTable("artistusers", table => {
         table.increments('id')
-        table.text('name')
-        table.text('email')
-        table.text('password')
-        table.text('image_link')
+        table.text('artist_name')
+        table.text('artist_email')
+        table.text('artist_password')
+        table.text('artist_image_link')
         table.text('pic_one')
         table.text('pic_two')
         table.text('pic_three')
