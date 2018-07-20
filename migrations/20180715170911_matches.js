@@ -13,7 +13,7 @@ exports.up = function (knex, Promise) {
             .inTable('artistusers')
             .onDelete('CASCADE')
             .index()
-        table.integer('chat_id')
+
     })
 };
 

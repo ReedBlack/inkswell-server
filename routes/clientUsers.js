@@ -18,8 +18,6 @@ router.get("/", (request, response, next) => {
 });
 
 router.get('/:id/matches', (req, res, next) => {
-
-
     database('matches')
         .innerJoin('clientusers', 'clientusers.id', 'matches.client_id')
         .innerJoin('artistusers', 'artistusers.id', 'matches.artist_id')

@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
+const database = require("../database-connection");
 
 
 const queries = require('../queries/queries_matches');
+const {
+    camelizeKeys,
+    decamelizeKeys
+} = require('humps');
 
 router.get("/", (request, response, next) => {
     queries.list().then(myMatches => {
@@ -11,6 +15,19 @@ router.get("/", (request, response, next) => {
             myMatches
         });
     }).catch(next);
+});
+
+router.get('/:id/chat', (req, res, next) => {
+    database('chat')
+        .innerJoin('matches', 'matches.id', 'chat.match_id')
+        .where('matches.id', req.params.id)
+        .then((rows) => {
+            const match_chat = camelizeKeys(rows);
+            res.send(match_chat);
+        })
+        .catch((err) => {
+            next(err);
+        });
 });
 
 router.get("/:id", (request, response, next) => {
