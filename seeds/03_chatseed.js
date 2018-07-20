@@ -7,12 +7,12 @@ exports.seed = function (knex, Promise) {
           id: 1,
           match_id: 1,
           chat_client: "yo buddy!",
-          chat_artist: "",
+          chat_artist: null,
         },
         {
           id: 2,
           match_id: 1,
-          chat_client: "",
+          chat_client: null,
           chat_artist: "you'z wants tats, brah?",
         },
 
