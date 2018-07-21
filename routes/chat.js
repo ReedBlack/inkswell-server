@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const database = require("../database-connection");
 const queries = require('../queries/queries_chat');
 
 router.get("/", (request, response, next) => {

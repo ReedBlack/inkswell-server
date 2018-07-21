@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex("artistusers").insert([{
           id: 1,
-          artist_name: "Eliane Lorey",
+          artist_name: "Elaine Lorey",
           artist_email: "Elaine@gmail.com",
           artist_password: "654321",
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Elaine.png",
@@ -23,7 +23,7 @@ exports.seed = function (knex, Promise) {
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke.png",
           pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke1.jpg",
           pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke2.jpg",
-          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke3.jpg",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/brooke3.jpg",
           shop: "Evoke Tattoos"
         },
         {
@@ -39,7 +39,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 4,
-          artist_name: "Rebecca Ashley aka Black Huntress",
+          artist_name: "Rebecca Ashley",
           artist_email: "Rebecca@gmail.com",
           artist_password: "654321",
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/rebecca.png",
@@ -58,10 +58,32 @@ exports.seed = function (knex, Promise) {
           pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish2.png",
           pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish3.png",
           shop: "Th'ink Tank"
+        },
+        {
+          id: 6,
+          artist_name: "Morgan Alynn",
+          artist_email: "Morgan@gmail.com",
+          artist_password: "654321",
+          artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Morgan.png",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Morgan1.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Morgan2.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Morgan3.png",
+          shop: "Claw and Talon Tattoo"
+        },
+        {
+          id: 7,
+          artist_name: "Josh Wrede",
+          artist_email: "Josh@gmail.com",
+          artist_password: "654321",
+          artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Josh.png",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Josh1.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Josh2.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Josh3.png",
+          shop: "Til Death Tattoo"
         }
       ]);
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE artistusers_id_seq RESTART WITH 4;");
+      return knex.raw("ALTER SEQUENCE artistusers_id_seq RESTART WITH 8;");
     });
 };
