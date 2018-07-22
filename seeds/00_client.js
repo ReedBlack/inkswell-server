@@ -4,7 +4,7 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('clientusers').insert([{
-          id: 1,
+          client_id: 1,
           client_name: "Reed",
           client_email: "black.reed.c@gmail.com",
           client_password: "123456",
@@ -15,7 +15,7 @@ exports.seed = function (knex, Promise) {
           description: "I want a colorful, dreamlike depiction of the mountains"
         },
         {
-          id: 2,
+          client_id: 2,
           client_name: "Dillon",
           client_email: "dillon@gmail.com",
           client_password: "123456",
@@ -26,7 +26,7 @@ exports.seed = function (knex, Promise) {
           description: "I want to get a bong tattood on my chest. Any bong will do. The more lavish, the better"
         },
         {
-          id: 3,
+          client_id: 3,
           client_name: "Dan",
           client_email: "dan@gmail.com",
           client_password: "123456",
@@ -37,7 +37,7 @@ exports.seed = function (knex, Promise) {
           description: "I want to get the entire 2014 Coachella lineup tattood on my back"
         },
         {
-          id: 4,
+          client_id: 4,
           client_name: "Brandon",
           client_email: "brandon@gmail.com",
           client_password: "123456",
@@ -48,7 +48,7 @@ exports.seed = function (knex, Promise) {
           description: "I'm basically going to be printing money within 2 years, so I figured I'd get a sheet of uncut benjamins tatted around my arm"
         },
         {
-          id: 5,
+          client_id: 5,
           client_name: "Nick",
           client_email: "nick@gmail.com",
           client_password: "123456",
@@ -59,7 +59,7 @@ exports.seed = function (knex, Promise) {
           description: "Think Tupac's Thug Life tattoo, but instead I want 'DJ Munchen' over my stomach in comic sans"
         },
         {
-          id: 6,
+          client_id: 6,
           client_name: "Patrick",
           client_email: "patrick@gmail.com",
           client_password: "123456",
@@ -73,6 +73,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE clientusers_id_seq RESTART WITH 7;")
+      return knex.raw("ALTER SEQUENCE clientusers_client_id_seq RESTART WITH 7;")
     })
 };

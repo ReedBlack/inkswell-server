@@ -7,7 +7,7 @@ module.exports = {
     read(id) {
         return database("clientusers")
             .select()
-            .where("id", id)
+            .where("client_id", client_id)
             .first();
     },
     create(clientusers) {
@@ -18,11 +18,11 @@ module.exports = {
     },
     update(id, clientusers) {
         return database("clientusers")
-            .where("id", id)
+            .where("client_id", client_id)
             .update(clientusers, "*")
             .then(record => record[0]);
     },
     delete(id) {
-        return database("clientusers").where("id", id).del()
+        return database("clientusers").where("client_id", client_id).del()
     }
 };

@@ -11,8 +11,8 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(chat => {
+router.get("/:chat_id", (request, response, next) => {
+    queries.read(request.params.chat_id).then(chat => {
         chat
             ?
             response.json({
@@ -32,16 +32,16 @@ router.post("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.delete("/:id", (request, response, next) => {
-    queries.delete(request.params.id).then(() => {
+router.delete("/:chat_id", (request, response, next) => {
+    queries.delete(request.params.chat_id).then(() => {
         response.status(204).json({
             deleted: true
         });
     }).catch(next);
 });
 
-router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(chat => {
+router.put("/:chat_id", (request, response, next) => {
+    queries.update(request.params.chat_id, request.body).then(chat => {
         response.json({
             chat: chat[0]
         });

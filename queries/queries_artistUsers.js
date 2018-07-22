@@ -4,10 +4,10 @@ module.exports = {
     list() {
         return database("artistusers").select();
     },
-    read(id) {
+    read(artist_id) {
         return database("artistusers")
             .select()
-            .where("id", id)
+            .where("artist_id", artist_id)
             .first();
     },
     create(artistusers) {
@@ -16,13 +16,13 @@ module.exports = {
             .returning("*")
             .then(record => record[0]);
     },
-    update(id, artistusers) {
+    update(artist_id, artistusers) {
         return database("artistusers")
-            .where("id", id)
+            .where("artist_id", artist_id)
             .update(artistusers, "*")
             .then(record => record[0]);
     },
-    delete(id) {
-        return database("artistusers").where("id", id).del()
+    delete(artist_id) {
+        return database("artistusers").where("artist_id", artist_id).del()
     }
 };

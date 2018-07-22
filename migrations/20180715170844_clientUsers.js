@@ -1,6 +1,6 @@
 exports.up = function (knex, Promise) {
     return knex.schema.createTable("clientusers", table => {
-        table.increments('id')
+        table.increments('client_id')
         table.text('client_name')
         table.text('client_email')
         table.text('client_password')

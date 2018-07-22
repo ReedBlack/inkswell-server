@@ -17,10 +17,10 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.get('/:id/chat', (req, res, next) => {
+router.get('/:match_id/chat', (req, res, next) => {
     database('chat')
-        .leftJoin('matches', 'matches.id', 'chat.match_id')
-        .where('matches.id', req.params.id)
+        .innerJoin('matches', 'matches.match_id', 'chat.match_id')
+        .where('matches.match_id', req.params.match_id)
         .then((rows) => {
             const match_chat = camelizeKeys(rows);
             res.send(match_chat);
@@ -30,8 +30,8 @@ router.get('/:id/chat', (req, res, next) => {
         });
 });
 
-router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(matches => {
+router.get("/:match_id", (request, response, next) => {
+    queries.read(request.params.match_id).then(matches => {
         matches
             ?
             response.json({
@@ -51,16 +51,16 @@ router.post("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.delete("/:id", (request, response, next) => {
-    queries.delete(request.params.id).then(() => {
+router.delete("/:match_id", (request, response, next) => {
+    queries.delete(request.params.match_id).then(() => {
         response.status(204).json({
             deleted: true
         });
     }).catch(next);
 });
 
-router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(matches => {
+router.put("/:match_id", (request, response, next) => {
+    queries.update(request.params.match_id, request.body).then(matches => {
         response.json({
             matches: matches[0]
         });

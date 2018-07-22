@@ -5,7 +5,7 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex("artistusers").insert([{
-          id: 1,
+          artist_id: 1,
           artist_name: "Elaine Lorey",
           artist_email: "Elaine@gmail.com",
           artist_password: "654321",
@@ -16,7 +16,7 @@ exports.seed = function (knex, Promise) {
           shop: "Urban Element"
         },
         {
-          id: 2,
+          artist_id: 2,
           artist_name: "Brooke Engleheart",
           artist_email: "Brooke@gmail.com",
           artist_password: "654321",
@@ -27,7 +27,7 @@ exports.seed = function (knex, Promise) {
           shop: "Evoke Tattoos"
         },
         {
-          id: 3,
+          artist_id: 3,
           artist_name: "Skyler Espinoza",
           artist_email: "Skyler@gmail.com",
           artist_password: "654321",
@@ -38,7 +38,7 @@ exports.seed = function (knex, Promise) {
           shop: "Certified Tattoo Studios"
         },
         {
-          id: 4,
+          artist_id: 4,
           artist_name: "Rebecca Ashley",
           artist_email: "Rebecca@gmail.com",
           artist_password: "654321",
@@ -49,7 +49,7 @@ exports.seed = function (knex, Promise) {
           shop: "Auspicious Tattoo"
         },
         {
-          id: 5,
+          artist_id: 5,
           artist_name: "Fish",
           artist_email: "Fish@gmail.com",
           artist_password: "654321",
@@ -60,7 +60,7 @@ exports.seed = function (knex, Promise) {
           shop: "Th'ink Tank"
         },
         {
-          id: 6,
+          artist_id: 6,
           artist_name: "Morgan Alynn",
           artist_email: "Morgan@gmail.com",
           artist_password: "654321",
@@ -71,7 +71,7 @@ exports.seed = function (knex, Promise) {
           shop: "Claw and Talon Tattoo"
         },
         {
-          id: 7,
+          artist_id: 7,
           artist_name: "Josh Wrede",
           artist_email: "Josh@gmail.com",
           artist_password: "654321",
@@ -84,6 +84,6 @@ exports.seed = function (knex, Promise) {
       ]);
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE artistusers_id_seq RESTART WITH 8;");
+      return knex.raw("ALTER SEQUENCE artistusers_artist_id_seq RESTART WITH 8;");
     });
 };

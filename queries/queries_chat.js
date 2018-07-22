@@ -4,10 +4,10 @@ module.exports = {
     list() {
         return database("chat").select();
     },
-    read(id) {
+    read(chat_id) {
         return database("chat")
             .select()
-            .where("id", id)
+            .where("chat_id", chat_id)
             .first();
     },
     create(chat) {
@@ -16,13 +16,13 @@ module.exports = {
             .returning("*")
             .then(record => record[0]);
     },
-    update(id, chat) {
+    update(chat_id, chat) {
         return database("chat")
-            .where("id", id)
+            .where("chat_id", chat_id)
             .update(chat, "*")
             .then(record => record[0]);
     },
-    delete(id) {
-        return database("chat").where("id", id).del()
+    delete(chat_id) {
+        return database("chat").where("chat_id", chat_id).del()
     }
 };

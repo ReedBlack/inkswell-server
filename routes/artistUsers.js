@@ -16,10 +16,10 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.get('/:id/matches', (req, res, next) => {
+router.get('/:artist_id/matches', (req, res, next) => {
     queries.read('matches')
-        .innerJoin('artistusers', 'artistusers.id', 'matches.artist_id')
-        .where('matches.artist_id', req.params.id)
+        .innerJoin('artistusers', 'artistusers.artist_id', 'matches.artist_id')
+        .where('matches.artist_id', req.params.artist_id)
         .then((rows) => {
             const artist_matches = camelizeKeys(rows);
             res.send(artist_matches);
@@ -29,8 +29,8 @@ router.get('/:id/matches', (req, res, next) => {
         });
 });
 
-router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(artistusers => {
+router.get("/:artist_id", (request, response, next) => {
+    queries.read(request.params.artist_id).then(artistusers => {
         artistusers
             ?
             response.json({
@@ -50,16 +50,16 @@ router.post("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.delete("/:id", (request, response, next) => {
-    queries.delete(request.params.id).then(() => {
+router.delete("/:artist_id", (request, response, next) => {
+    queries.delete(request.params.artist_id).then(() => {
         response.status(204).json({
             deleted: true
         });
     }).catch(next);
 });
 
-router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(artistusers => {
+router.put("/:artist_id", (request, response, next) => {
+    queries.update(request.params.artist_id, request.body).then(artistusers => {
         response.json({
             artistusers: artistusers[0]
         });

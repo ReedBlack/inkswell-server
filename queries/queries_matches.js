@@ -4,10 +4,10 @@ module.exports = {
     list() {
         return database("matches").select();
     },
-    read(id) {
+    read(match_id) {
         return database("matches")
             .select()
-            .where("id", id)
+            .where("match_id", match_id)
             .first();
     },
     create(matches) {
@@ -16,13 +16,13 @@ module.exports = {
             .returning("*")
             .then(record => record[0]);
     },
-    update(id, matches) {
+    update(match_id, matches) {
         return database("matches")
-            .where("id", id)
+            .where("match_id", match_id)
             .update(matches, "*")
             .then(record => record[0]);
     },
-    delete(id) {
-        return database("matches").where("id", id).del()
+    delete(match_id) {
+        return database("matches").where("match_id", match_id).del()
     }
 };

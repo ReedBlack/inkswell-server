@@ -1,9 +1,9 @@
 exports.up = function (knex, Promise) {
     return knex.schema.createTable("chat", table => {
-        table.increments('id').primary()
+        table.increments('chat_id').primary()
         table.integer('match_id')
             .notNullable()
-            .references('id')
+            .references('match_id')
             .inTable('matches')
             .onDelete('CASCADE')
             .index()

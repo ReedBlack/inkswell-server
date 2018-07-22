@@ -17,11 +17,11 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.get('/:id/matches', (req, res, next) => {
+router.get('/:client_id/matches', (req, res, next) => {
     database('matches')
-        .innerJoin('clientusers', 'clientusers.id', 'matches.client_id')
-        .innerJoin('artistusers', 'artistusers.id', 'matches.artist_id')
-        .where('clientusers.id', req.params.id)
+        .innerJoin('clientusers', 'clientusers.client_id', 'matches.client_id')
+        .innerJoin('artistusers', 'artistusers.artist_id', 'matches.artist_id')
+        .where('clientusers.client_id', req.params.client_id)
         .then((rows) => {
             const client_matches = camelizeKeys(rows);
             res.send(client_matches);
@@ -31,18 +31,18 @@ router.get('/:id/matches', (req, res, next) => {
         });
 });
 
-// router.get("/:id", (request, response, next) => {
-//     queries.read(request.params.id).then(clientusers => {
-//         clientusers
-//             ?
-//             response.json({
-//                 clientusers
-//             }) :
-//             response.status(404).json({
-//                 message: 'Not found'
-//             })
-//     }).catch(next);
-// });
+router.get("/:client_id", (request, response, next) => {
+    queries.read(request.params.client_id).then(clientusers => {
+        clientusers
+            ?
+            response.json({
+                clientusers
+            }) :
+            response.status(404).json({
+                message: 'Not found'
+            })
+    }).catch(next);
+});
 
 router.post("/", (request, response, next) => {
     queries.create(request.body).then(clientusers => {
@@ -52,16 +52,16 @@ router.post("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.delete("/:id", (request, response, next) => {
-    queries.delete(request.params.id).then(() => {
+router.delete("/:client_id", (request, response, next) => {
+    queries.delete(request.params.client_id).then(() => {
         response.status(204).json({
             deleted: true
         });
     }).catch(next);
 });
 
-router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(clientusers => {
+router.put("/:client_id", (request, response, next) => {
+    queries.update(request.params.client_id, request.body).then(clientusers => {
         response.json({
             clientusers: clientusers[0]
         });
