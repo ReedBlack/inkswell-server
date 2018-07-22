@@ -7,8 +7,8 @@ exports.up = function (knex, Promise) {
             .inTable('matches')
             .onDelete('CASCADE')
             .index()
-        table.text('chat_client')
-        table.text('chat_artist')
+        table.string('chat_client').nullable()
+        table.string('chat_artist').nullable()
     })
 };
 

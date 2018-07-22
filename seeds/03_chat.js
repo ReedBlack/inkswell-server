@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       return knex('chat').insert([{
           id: 1,
           match_id: 1,
-          chat_client: "yo buddy!",
+          chat_client: "yo!",
           chat_artist: null,
         },
         {
@@ -14,6 +14,18 @@ exports.seed = function (knex, Promise) {
           match_id: 1,
           chat_client: null,
           chat_artist: "you'z wants tats, brah?",
+        },
+        {
+          id: 3,
+          match_id: 1,
+          chat_client: "yesh",
+          chat_artist: null,
+        },
+        {
+          id: 4,
+          match_id: 1,
+          chat_client: null,
+          chat_artist: "I gotchu fam",
         },
 
       ])
