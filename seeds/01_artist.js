@@ -21,9 +21,9 @@ exports.seed = function (knex, Promise) {
           artist_email: "Brooke@gmail.com",
           artist_password: "654321",
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke.png",
-          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke1.jpg",
-          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke2.jpg",
-          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/brooke3.jpg",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke1.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke2.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/brooke3.png",
           shop: "Evoke Tattoos"
         },
         {

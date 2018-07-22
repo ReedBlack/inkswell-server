@@ -9,10 +9,10 @@ exports.seed = function (knex, Promise) {
           client_email: "black.reed.c@gmail.com",
           client_password: "123456",
           client_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Reed.png",
-          budget: "$400",
-          placement: "Tramp Stamp",
-          size: "Grapefruit",
-          description: "I want a big '</>' right above my ass so skillsfund can see what it's for while they fuck me"
+          budget: "$650",
+          placement: "back shoulder",
+          size: "9x9",
+          description: "I want a colorful, dreamlike depiction of the mountains"
         },
         {
           id: 2,
@@ -56,7 +56,7 @@ exports.seed = function (knex, Promise) {
           budget: "$500",
           placement: "belly",
           size: "medium",
-          description: "Think Tupac's Thug Life tattoo, but instead I want 'DJ Munchen' over my belly button in that mega-gothic font...whatever it's called"
+          description: "Think Tupac's Thug Life tattoo, but instead I want 'DJ Munchen' over my stomach in comic sans"
         },
         {
           id: 6,
