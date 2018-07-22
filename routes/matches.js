@@ -19,7 +19,7 @@ router.get("/", (request, response, next) => {
 
 router.get('/:id/chat', (req, res, next) => {
     database('chat')
-        .innerJoin('matches', 'matches.id', 'chat.match_id')
+        .leftJoin('matches', 'matches.id', 'chat.match_id')
         .where('matches.id', req.params.id)
         .then((rows) => {
             const match_chat = camelizeKeys(rows);

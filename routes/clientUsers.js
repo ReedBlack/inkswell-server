@@ -31,18 +31,18 @@ router.get('/:id/matches', (req, res, next) => {
         });
 });
 
-router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(clientusers => {
-        clientusers
-            ?
-            response.json({
-                clientusers
-            }) :
-            response.status(404).json({
-                message: 'Not found'
-            })
-    }).catch(next);
-});
+// router.get("/:id", (request, response, next) => {
+//     queries.read(request.params.id).then(clientusers => {
+//         clientusers
+//             ?
+//             response.json({
+//                 clientusers
+//             }) :
+//             response.status(404).json({
+//                 message: 'Not found'
+//             })
+//     }).catch(next);
+// });
 
 router.post("/", (request, response, next) => {
     queries.create(request.body).then(clientusers => {
