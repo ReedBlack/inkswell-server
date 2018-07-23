@@ -23,7 +23,7 @@ exports.seed = function (knex, Promise) {
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke.png",
           pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke1.png",
           pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke2.png",
-          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/brooke3.png",
+          pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/Brooke3.png",
           shop: "Evoke Tattoos"
         },
         {

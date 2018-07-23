@@ -11,13 +11,10 @@ const chat = require("./routes/chat");
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
-const queries_artistusers = require("./queries/queries_artistUsers");
-const queries_chat = require("./queries/queries_chat");
-const queries_clientusers = require("./queries/queries_clientUsers");
-const queries_matches = require("./queries/queries_matches");
 
 app.use(morgan('dev'));
 
+// The event will be called when a client is connected.
 
 app.use(bodyParser.json());
 app.use(cors())
@@ -60,11 +57,11 @@ app.post("/upload",
     });
 
 // catch 404 and forward to error handler
-// app.use((req, res, next) => {
-//     const err = new Error("Not Found");
-//     err.status = 404;
-//     next(err);
-// });
+app.use((req, res, next) => {
+    const err = new Error("Not Found");
+    err.status = 404;
+    next(err);
+});
 
 // error handler
 app.use((err, req, res, next) => {
