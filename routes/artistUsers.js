@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const database = require("../database-connection");
 const queries = require('../queries/queries_artistUsers');
 const {
     camelizeKeys,
@@ -17,8 +17,9 @@ router.get("/", (request, response, next) => {
 });
 
 router.get('/:artist_id/matches', (req, res, next) => {
-    queries.read('matches')
+    database('matches')
         .innerJoin('artistusers', 'artistusers.artist_id', 'matches.artist_id')
+        .innerJoin('clientusers', 'clientusers.client_id', 'matches.client_id')
         .where('matches.artist_id', req.params.artist_id)
         .then((rows) => {
             const artist_matches = camelizeKeys(rows);

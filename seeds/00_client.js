@@ -34,7 +34,7 @@ exports.seed = function (knex, Promise) {
           budget: "Dev Money",
           placement: "back",
           size: "whole back",
-          description: "I want to get the entire 2014 Coachella lineup tattood on my back"
+          description: "I want to get the entire 2009 Coachella lineup tattood on my back"
         },
         {
           client_id: 4,
@@ -67,7 +67,18 @@ exports.seed = function (knex, Promise) {
           budget: "new dev money",
           placement: "chest/backstrap",
           size: "medium-large",
-          description: "I feel naked without my satchel. If I just got it tatted on, I'd feel more whole in general"
+          description: "My satchel is my soul. My lifeblood. I need a true-to-life tattoo of it strapped around my chest and around my back that is so picture-real, you can almost smell the leather"
+        },
+        {
+          client_id: 7,
+          client_name: "Jose",
+          client_email: "jose@gmail.com",
+          client_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Jose.jpeg",
+          client_password: "123456",
+          budget: "$300",
+          placement: "the small of my back",
+          size: "medium",
+          description: "tribal butterfly emerging from a cocoon, symbolizing my transformation from trudging musician to a beautiful software developing butterfly"
         },
 
       ])
