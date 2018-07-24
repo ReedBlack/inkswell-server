@@ -54,8 +54,8 @@ exports.seed = function (knex, Promise) {
           artist_email: "Fish@gmail.com",
           artist_password: "654321",
           artist_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish.png",
-          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish1.png",
-          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish2.png",
+          pic_one: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish2.png",
+          pic_two: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish1.png",
           pic_three: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/fish3.png",
           shop: "Th'ink Tank"
         },
