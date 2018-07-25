@@ -49,14 +49,22 @@ exports.seed = function (knex, Promise) {
           artist_id: 2,
         },
         {
-          match_id: 10,
+          match_id: 11,
           client_id: 3,
+          artist_id: 1,
+        } {
+          match_id: 12,
+          client_id: 6,
+          artist_id: 5,
+        } {
+          match_id: 13,
+          client_id: 1,
           artist_id: 1,
         }
 
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE matches_match_id_seq RESTART WITH 11;")
+      return knex.raw("ALTER SEQUENCE matches_match_id_seq RESTART WITH 14;")
     })
 };
