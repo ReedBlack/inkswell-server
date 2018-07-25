@@ -52,13 +52,25 @@ exports.seed = function (knex, Promise) {
           match_id: 11,
           client_id: 3,
           artist_id: 1,
-        } {
+        },
+        {
           match_id: 12,
           client_id: 6,
           artist_id: 5,
-        } {
+        },
+        {
           match_id: 13,
           client_id: 1,
+          artist_id: 1,
+        },
+        {
+          match_id: 14,
+          client_id: 4,
+          artist_id: 5,
+        },
+        {
+          match_id: 15,
+          client_id: 4,
           artist_id: 1,
         }
 
