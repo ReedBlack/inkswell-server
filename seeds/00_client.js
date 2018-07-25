@@ -16,17 +16,6 @@ exports.seed = function (knex, Promise) {
         },
         {
           client_id: 2,
-          client_name: "Dillon",
-          client_email: "dillon@gmail.com",
-          client_password: "123456",
-          client_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Dillon.png",
-          budget: "$200",
-          placement: "chest",
-          size: "bong-sized",
-          description: "I want to get a bong tattood on my chest. Any bong will do. The more lavish, the better"
-        },
-        {
-          client_id: 3,
           client_name: "Dan",
           client_email: "dan@gmail.com",
           client_password: "123456",
@@ -37,7 +26,7 @@ exports.seed = function (knex, Promise) {
           description: "I want to get the entire 2009 Coachella lineup tattood on my back"
         },
         {
-          client_id: 4,
+          client_id: 3,
           client_name: "Brandon",
           client_email: "brandon@gmail.com",
           client_password: "123456",
@@ -48,7 +37,7 @@ exports.seed = function (knex, Promise) {
           description: "I'm basically going to be printing money within 2 years, so I figured I'd get a sheet of uncut benjamins tatted around my arm"
         },
         {
-          client_id: 5,
+          client_id: 4,
           client_name: "Nick",
           client_email: "nick@gmail.com",
           client_password: "123456",
@@ -59,7 +48,7 @@ exports.seed = function (knex, Promise) {
           description: "Think Tupac's Thug Life tattoo, but instead I want 'DJ Munchen' over my stomach in comic sans"
         },
         {
-          client_id: 6,
+          client_id: 5,
           client_name: "Kaitlin",
           client_email: "Kaitlin@gmail.com",
           client_password: "123456",
@@ -67,10 +56,10 @@ exports.seed = function (knex, Promise) {
           budget: "$1500",
           placement: "full sleeve",
           size: "medium",
-          description: "I want a full sleeve depicting the epic battle between Godzilla and Mothra over the partially-desctroyed tokyo skyline"
+          description: "I want a full sleeve depicting the epic battle between Godzilla and Mothra over the partially-destroyed tokyo skyline"
         },
         {
-          client_id: 7,
+          client_id: 6,
           client_name: "Patrick",
           client_email: "patrick@gmail.com",
           client_password: "123456",
@@ -81,7 +70,7 @@ exports.seed = function (knex, Promise) {
           description: "My satchel is my soul. My lifeblood. I need a true-to-life tattoo of it strapped around my chest and around my back that is so picture-real, you can almost smell the leather"
         },
         {
-          client_id: 8,
+          client_id: 7,
           client_name: "Jose",
           client_email: "jose@gmail.com",
           client_image_link: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/inkswell/ClientUsers/Jose.jpeg",
@@ -95,6 +84,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE clientusers_client_id_seq RESTART WITH 9;")
+      return knex.raw("ALTER SEQUENCE clientusers_client_id_seq RESTART WITH 8;")
     })
 };
