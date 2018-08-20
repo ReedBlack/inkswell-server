@@ -6,6 +6,8 @@ const app = express();
 const cors = require('cors');
 const clientusers = require("./routes/clientUsers");
 const artistusers = require("./routes/artistUsers");
+const clientLikes = require("./routes/clientLikes");
+const artistLikes = require("./routes/artistLikes");
 const matches = require("./routes/matches");
 const chat = require("./routes/chat");
 const multerS3 = require("multer-s3");
@@ -22,6 +24,8 @@ app.use("/clientusers", clientusers);
 app.use("/artistusers", artistusers);
 app.use("/matches", matches);
 app.use("/chat", chat);
+app.use("/clientLikes", clientLikes);
+app.use("/artistLikes", artistLikes);
 
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
