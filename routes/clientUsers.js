@@ -18,8 +18,8 @@ router.get("/", (request, response, next) => {
 
 router.get("/:client_id/matches", (req, res, next) => {
   database("matches")
-    .leftJoin("clientusers", "clientusers.client_id", "matches.client_id")
-    .rightJoin("artistusers", "artistusers.artist_id", "matches.artist_id")
+    .outerJoin("clientusers", "clientusers.client_id", "matches.client_id")
+    .outerJoin("artistusers", "artistusers.artist_id", "matches.artist_id")
     .where("clientusers.client_id", req.params.client_id)
     .then(rows => {
       const client_matches = camelizeKeys(rows);
