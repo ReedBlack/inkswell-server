@@ -30,6 +30,19 @@ router.get('/:artist_id/matches', (req, res, next) => {
         });
 });
 
+router.get('/:artist_id/artistLikes', (req, res, next) => {
+    database('artistLikes')
+        .innerJoin('artistUsers', 'artistUsers.artist_id', 'artistLikes.artist_id')
+        .where('artistUsers.artist_id', req.params.artist_id)
+        .then((rows) => {
+            const artist_likes = camelizeKeys(rows);
+            res.send(artist_likes);
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
 router.get("/:artist_id", (request, response, next) => {
     queries.read(request.params.artist_id).then(artistusers => {
         artistusers

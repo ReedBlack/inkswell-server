@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
 const queries = require("../queries/queries_chat");
-
-
-
 
 router.get("/", (request, response, next) => {
   queries
